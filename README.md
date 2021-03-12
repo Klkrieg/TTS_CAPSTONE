@@ -25,5 +25,7 @@ Then you will need to go to github and create a Pull Request to merge your newly
 pushed branch to the `development` branch
 
 After making a PR you can request review from one of us or all of us!
+When we feel we have everything in the `development` working correctly and ready for "production"
+we will create a PR to merge the `development` branch into the `main` branch.
 
 This is **optional** but good practice for all of us to look over eachothers changes in the codebase!
