@@ -1,8 +1,8 @@
 package com.cpr.codingparkrangers.controller;
 
-import com.cpr.codingparkrangers.model.Park;
+import com.cpr.codingparkrangers.model.ResponseWrapper;
 import com.cpr.codingparkrangers.model.Request;
-import com.cpr.codingparkrangers.service.ParkService;
+import com.cpr.codingparkrangers.service.ResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,19 +13,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MainController {
 
     @Autowired
-    ParkService parkService;
+    ResponseService responseService;
 
     @GetMapping
     public String mainPage(Model model){
+        model.addAttribute("request", new Request());
         return "index";
     }
 
     @PostMapping(value = "/")
     public String getGeneralInfo(Request request, Model model){
+        ResponseWrapper responseWrapper = responseService.getGeneralInfo(request.getApiCategory(), request.getParkCode());
+
+        // Prints park code and park object
         System.out.println(request.getParkCode());
-        Park park = parkService.getGeneralInfo(request.getParkCode());
-        System.out.println(park);
-        model.addAttribute("park", park);
+        System.out.println(responseWrapper);
+        System.out.println(responseWrapper.getData());
+//
+//        model.addAttribute("park", park);
         return "index";
     }
 
