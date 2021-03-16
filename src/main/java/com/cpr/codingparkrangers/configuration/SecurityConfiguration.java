@@ -1,5 +1,6 @@
 package com.cpr.codingparkrangers.configuration;
 
+import com.cpr.codingparkrangers.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +22,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
   private BCryptPasswordEncoder bCryptPasswordEncoder;
   @Autowired
   private DataSource dataSource;
+//  @Autowired
+//  private UserService userService;
   @Value("${spring.queries.users-query}")
   private String usersQuery;
 
@@ -31,28 +34,39 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .usersByUsernameQuery(usersQuery)
             .dataSource(dataSource)
             .passwordEncoder(bCryptPasswordEncoder);
+//    auth.userDetailsService(userService).passwordEncoder(bCryptPasswordEncoder);
   }
 
   @Override
   protected void configure(HttpSecurity http) throws Exception{
+    System.out.println("A");
+
     http
             .authorizeRequests()
-            .antMatchers("/console/**").permitAll()
-            .antMatchers("/").permitAll()
-            .antMatchers("/login").permitAll()
-            .antMatchers("/signup").permitAll()
-            .anyRequest()
-            .authenticated().and().csrf().disable()
+            .antMatchers("/profile").authenticated()
+            .antMatchers("/profile/*").authenticated()
+            .and()
+//            .antMatchers("/console/**").permitAll()
+//            .antMatchers("/").permitAll()
+//            .antMatchers("/login").permitAll()
+//            .antMatchers("/signup").permitAll()
+//            .antMatchers().hasAnyAuthority().anyRequest()
+//            .authenticated().and().csrf().disable()
             .formLogin()
-            .loginPage("/login").failureUrl("/login?error=true")
+            .loginPage("/signin").failureUrl("/login?error=true")
+            .loginProcessingUrl("/login")
             .defaultSuccessUrl("/")
+            .usernameParameter("username")
+            .passwordParameter("password")
             .and()
             .logout()
             .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
             .logoutSuccessUrl("/login").and().exceptionHandling();
-  //            ALL TO BE ADDED AS WE CONTINUE.
-//            .antMatchers("/custom.js").permitAll()
-//            .antMatchers("/custom.css").permitAll()
+    System.out.println("B");
+
+    http.headers().frameOptions().disable();
+    System.out.println("C");
+
   }
   @Override
   public void configure(WebSecurity web) throws Exception{

@@ -18,7 +18,7 @@ public class MainController {
     @GetMapping
     public String mainPage(Model model){
         model.addAttribute("request", new Request());
-        return "index";
+        return "home";
     }
 
     @PostMapping(value = "/")

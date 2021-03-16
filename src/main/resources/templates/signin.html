@@ -1,0 +1,40 @@
+<!--LOGIN PAGE FOR EXISTING USERS-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="static/index.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--<div th:replace="fragments/fragments :: navbar" ></div>-->
+
+<main role="main">
+    <div class="container">
+        <form method="post" th:action="@{/login}" >
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" th:placeholder="Username" class="form-control"/>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" th:placeholder="Password" id="password" class="form-control" />
+            </div>
+            <div align="center" th:if="${param.error}">
+                <h4 style="color: red">Login unsuccessful.</h4>
+            </div>
+            <button type="submit" value="Login" class="btn btn-success btn-block">Login</button>
+        </form>
+        <div class="pt-3">
+            <a th:href="@{/signup}" class="mt-3"><button type="button" class="btn btn-primary btn-block">Sign Up</button></a>
+        </div>
+    </div>
+</main>
+
+<!--<footer th:replace="fragments/fragments :: footer"></footer>-->
+</body>
+</html>
