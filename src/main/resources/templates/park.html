@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Park Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">National Parks Trip Planner</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Sign Up</a>
+            <!--  IF signed-in-->
+                        <a class="nav-item nav-link" href="#">Logout</a>
+                        <a class="nav-item nav-link" href="#">Saved Parks</a>
+        </div>
+    </div>
+</nav>
+
+<!--MAIN TITLE OF PAGE-->
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">{parkName}</h1>
+            <p>Plan a trip to {parkName}!</p>
+        </div>
+    </div>
+</main>
+
+<!--IMAGE CONTAINER-->
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<img src="https://images.unsplash.com/photo-1473285478869-e754fc9b1cee?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8YmlnJTIwYmVuZCUyMG5hdGlvbmFsJTIwcGFya3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="img-fluid" alt="Responsive image">-->
+<!--</div>-->
+<!--</div>-->
+
+<!--CARDS RENDERING INFORMATION RETRIEVED FROM API BASED ON PARK SELECTION-->
+<div class="container">
+    <div class="row">
+        <div class="card col-md-3 small-product-card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1473285478869-e754fc9b1cee?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8YmlnJTIwYmVuZCUyMG5hdGlvbmFsJTIwcGFya3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
+            <div class="card-body">
+                <div class="card-title">
+                    <h1>Park Description</h1>
+                </div>
+                <div class="card-text">
+                    <p>{API: "description"}</p>
+<!--                    <p>Park URL</p>-->
+                </div>
+<!--                <a href="#" class="btn btn-primary">Learn More</a>-->
+            </div>
+        </div>
+        <div class="card col-md-3 small-product-card">
+            <!--            <a class="card-img"/></a>-->
+            <div class="card-body">
+                <div class="card-title">
+                    <h1>Weather Summary</h1>
+                </div>
+                <div class="card-text">
+                    <p>{API: "weatherInfo"}</p>
+<!--                    <p>Park URL</p>-->
+                </div>
+<!--                <a href="#" class="btn btn-primary">Learn More</a>-->
+            </div>
+        </div>
+        <div class="card col-md-3 small-product-card">
+            <!--            <a class="card-img"/></a>-->
+            <div class="card-body">
+                <div class="card-title">
+                    <h1>Location</h1>
+                </div>
+                <div class="card-text">
+                    <p>{API: "latLong"}</p>
+                    <p>{API: "directionsUrl"}</p>
+                </div>
+<!--                <a href="#" class="btn btn-primary">Learn More</a>-->
+            </div>
+        </div>
+        <div class="card col-md-3 small-product-card">
+            <!--            <a class="card-img"/></a>-->
+            <div class="card-body">
+                <div class="card-title">
+                    <h1>View Calendar</h1>
+                </div>
+                <div class="card-text">
+                    <p>{Calendar will exist here}</p>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-3 small-product-card">
+            <!--            <a class="card-img"/></a>-->
+            <div class="card-body">
+                <div class="card-title">
+                    <h1>Operating Hours</h1>
+                </div>
+                <div class="card-text">
+                    <p>{API: "operating hours" -> "description"}</p>
+
+                </div>
+                <a href="#" class="btn btn-primary">NPS Website</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
