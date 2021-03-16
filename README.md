@@ -6,7 +6,7 @@ Clone the repo
 git clone https://github.com/Klkrieg/coding-park-rangers.git
 ```
 
-*If using IntelliJ be sure to open the project formt he pom.xml as a project*
+*If using IntelliJ be sure to open the project from the pom.xml as a project*
 
 ##Starting in on a new task
 Create and Checkout a new branch
@@ -28,4 +28,14 @@ After making a PR you can request review from one of us or all of us!
 When we feel we have everything in the `development` working correctly and ready for "production"
 we will create a PR to merge the `development` branch into the `main` branch.
 
-This is **optional** but good practice for all of us to look over eachothers changes in the codebase!
+This is **optional** but good practice for all of us to look over eachother's changes in the codebase!
+
+##Updating your local code
+First make sure you have a local `development` branch
+
+Ex.
+```shell
+git checkout -B development
+git pull origin development
+```
+To do this 
