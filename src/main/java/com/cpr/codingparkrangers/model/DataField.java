@@ -20,6 +20,7 @@ public class DataField {
     //Parks
     private Map<String, String>[] activities;
     private String fullName;
+    private String parkCode;
     private String description;
 
     //test
