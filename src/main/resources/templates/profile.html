@@ -12,61 +12,63 @@
 </head>
 <body>
 <!--Navbar-->
-<!--<div th:replace="fragments/navbar"></div>-->
+<div th:replace="fragments/navbar"></div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">National Parks Trip Planner</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#">Home</a>
-            <!-- If not signed in   -->
-            <!--  <a class="nav-item nav-link" href="#">Sign Up</a> -->
-
-            <!--  IF signed-in-->
-            <a class="nav-item nav-link" href="#">Logout</a>
-<!--            <a class="nav-item nav-link" href="#">Saved Parks</a>-->
-<!--            <a class="nav-item nav-link active" href="#">Visited Parks<span class="sr-only">(current)</span></a>-->
-        </div>
-    </div>
-</nav>
-
-<!--Profile Tabs (only logged in)-->
+<!--Profile Tabs -->
 <ul class="nav nav-tabs">
-    <li role="presentation" class="active"><a href="#">Profile</a></li>
-    <li role="presentation"><a href="#">Visited Parks</a></li>
-    <li role="presentation"><a href="#">Saved Parks</a></li>
+    <li role="presentation" class="active"><a href="/profile">Profile</a></li>
+    <li role="presentation"><a href="/visited">Visited Parks</a></li>
+    <li role="presentation"><a href="/saved">Saved Parks</a></li>
 </ul>
 
 <!--Profile Title-->
 <main role="main">
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-3">@{userName}'s Profile</h1>
+            <h1 class="display-3">@happycamper's Profile</h1>
         </div>
     </div>
 </main>
 
 <!-- Badges -->
-<div class="row">
-    <div class="col-xs-6 col-md-1">
-        <img src="https://image.shutterstock.com/image-vector/acadia-national-park-logo-sticker-600w-1928133191.jpg" alt="acadia test logo" class="avatar">
-    </div>
-    <div class="col-xs-6 col-md-1">
-        <img src="https://image.shutterstock.com/image-vector/big-bend-national-park-vector-600w-1929268745.jpg" alt="big bend test logo" class="avatar">
-    </div>
-    <div class="col-xs-6 col-md-1">
-        <img src="https://image.shutterstock.com/image-vector/bison-on-yellowstone-national-park-600w-1652480422.jpg" alt="yellowstone test logo" class="avatar">
-    </div>
-    <div class="col-xs-6 col-md-1">
-    <img src="https://image.shutterstock.com/image-vector/wild-bison-on-yosemite-national-600w-1652815735.jpg" alt="yosemite test logo" class="avatar">
-    </div>
-    <div class="col-xs-6 col-md-1">
-        <img src="https://image.shutterstock.com/image-vector/arches-national-park-emblem-logo-600w-1928265956.jpg" alt="arches test logo" class="avatar">
-    </div>
-</div>
+<div class="container">
+    <div class="container" id="badges">
+        <!-- Badges -->
+        <div class="row">
+            <div class="col-xs-6 col-md-1 mr-4 ">
+                <img src="../static/images/Asset 1Acadia.png" alt="acadia test logo" class="avatar ">
+            </div>
+            <div class="col-xs-6 col-md-1 mr-4">
+                <img src="../static/images/Asset 1GrandCanyon.png" alt="big bend test logo" class="avatar">
+            </div>
+            <div class="col-xs-6 col-md-1 mr-4">
+                <img src="../static/images/Asset 1RockyMtn.png" alt="yellowstone test logo" class="avatar">
+            </div>
+            <div class="col-xs-6 col-md-1 mr-4">
+                <img src="../static/images/Asset 1Yosemite.png" alt="yosemite test logo" class="avatar">
+            </div>
+            <div class="col-xs-6 col-md-1 mr-4">
+                <img src="../static/images/Asset 1Zion.png" alt="arches test logo" class="avatar">
+            </div>
+        </div>
+<!--<div class="row">-->
+<!--    <div class="col-xs-6 col-md-1">-->
+<!--&lt;!&ndash;        NEED TO IMPORT FOLDER OF PNG IMAGES FROM GOOGLE DRIVE for badges&ndash;&gt;-->
+<!--        <img src="./static/Yosemite.png" alt="badge 1" class="avatar">-->
+<!--    </div>-->
+<!--    <div class="col-xs-6 col-md-1">-->
+<!--        <img src="#" alt="badge 2" class="avatar">-->
+<!--    </div>-->
+<!--    <div class="col-xs-6 col-md-1">-->
+<!--        <img src="#" alt="badge 3" class="avatar">-->
+<!--    </div>-->
+<!--    <div class="col-xs-6 col-md-1">-->
+<!--    <img src="#" alt="badge 4" class="avatar">-->
+<!--    </div>-->
+<!--    <div class="col-xs-6 col-md-1">-->
+<!--        <img src="#" alt="badge 5" class="avatar">-->
+<!--    </div>-->
+<!--</div>-->
 
 <!--User info-->
 <div class="container">
@@ -74,12 +76,14 @@
         <div class="card col-md-3 small-product-card">
             <div class="card-body">
                 <div class="card-title">
-                    <h1>@{userName} Stats</h1>
+                    <h1>@happycamper</h1>
                 </div>
                 <div class="card-text">
-                    <p>Age</p>
-                    <p>About</p>
-                    <p>Location</p>
+                    <ul>
+                        <li>Age: 27</li>
+                        <li>About: Adventure seeker, gemini, lover of the outdoors!</li>
+                        <li>Location: Autin, TX</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -90,23 +94,27 @@
                     <h1>Parks Visited</h1>
                 </div>
                 <div class="card-text">
-                    <p>Acadia National Park</p>
-                    <p>Arches National Park</p>
-                    <p>Big Bend National Park</p>
-                    <p>Yosemite National Park</p>
+                    <ul>
+                        <li>Acadia National Park</li>
+                        <li>Canyonlands National Park</li>
+                        <li>Big Bend National Park</li>
+                        <li>Yosemite National Park</li>
+                    </ul>
                 </div>
             </div>
-</div>
-<div class="card col-md-3 small-product-card">
-    <div class="card-body">
-        <div class="card-title">
-            <h1>Images</h1>
         </div>
-        <div class="card-text">
-            <p>{images here/upload form}</p>
+        <div class="card col-md-3 small-product-card">
+<!--STATIC CALENDAR IMAGE IN THS CARD-->
+             <img class="card-img-top" src="" alt="calendar heatmap image here">
+            <div class="card-body">
+                <div class="card-title">
+                    <h1>Trip Tracker</h1>
+                </div>
+                <div class="card-text">
+                    <p>@happycamper's trips to National Parks.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 </div>
 </div>
 </body>
