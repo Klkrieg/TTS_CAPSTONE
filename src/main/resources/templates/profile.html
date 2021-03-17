@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+<body>
+<!--Navbar-->
+<!--<div th:replace="fragments/navbar"></div>-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">National Parks Trip Planner</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Home</a>
+            <!-- If not signed in   -->
+            <!--  <a class="nav-item nav-link" href="#">Sign Up</a> -->
+
+            <!--  IF signed-in-->
+            <a class="nav-item nav-link" href="#">Logout</a>
+<!--            <a class="nav-item nav-link" href="#">Saved Parks</a>-->
+<!--            <a class="nav-item nav-link active" href="#">Visited Parks<span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+
+<!--Profile Tabs (only logged in)-->
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#">Profile</a></li>
+    <li role="presentation"><a href="#">Visited Parks</a></li>
+    <li role="presentation"><a href="#">Saved Parks</a></li>
+</ul>
+
+<!--Profile Title-->
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">@{userName}'s Profile</h1>
+        </div>
+    </div>
+</main>
+
+<!-- Badges -->
+<div class="row">
+    <div class="col-xs-6 col-md-1">
+        <img src="https://image.shutterstock.com/image-vector/acadia-national-park-logo-sticker-600w-1928133191.jpg" alt="acadia test logo" class="avatar">
+    </div>
+    <div class="col-xs-6 col-md-1">
+        <img src="https://image.shutterstock.com/image-vector/big-bend-national-park-vector-600w-1929268745.jpg" alt="big bend test logo" class="avatar">
+    </div>
+    <div class="col-xs-6 col-md-1">
+        <img src="https://image.shutterstock.com/image-vector/bison-on-yellowstone-national-park-600w-1652480422.jpg" alt="yellowstone test logo" class="avatar">
+    </div>
+    <div class="col-xs-6 col-md-1">
+    <img src="https://image.shutterstock.com/image-vector/wild-bison-on-yosemite-national-600w-1652815735.jpg" alt="yosemite test logo" class="avatar">
+    </div>
+    <div class="col-xs-6 col-md-1">
+        <img src="https://image.shutterstock.com/image-vector/arches-national-park-emblem-logo-600w-1928265956.jpg" alt="arches test logo" class="avatar">
+    </div>
+</div>
+
+<!--User info-->
+<div class="container">
+    <div class="row">
+        <div class="card col-md-3 small-product-card">
+            <div class="card-body">
+                <div class="card-title">
+                    <h1>@{userName} Stats</h1>
+                </div>
+                <div class="card-text">
+                    <p>Age</p>
+                    <p>About</p>
+                    <p>Location</p>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-3 small-product-card">
+<!--    <img class="card-img-top" src="" alt="Card image cap">-->
+            <div class="card-body">
+                <div class="card-title">
+                    <h1>Parks Visited</h1>
+                </div>
+                <div class="card-text">
+                    <p>Acadia National Park</p>
+                    <p>Arches National Park</p>
+                    <p>Big Bend National Park</p>
+                    <p>Yosemite National Park</p>
+                </div>
+            </div>
+</div>
+<div class="card col-md-3 small-product-card">
+    <div class="card-body">
+        <div class="card-title">
+            <h1>Images</h1>
+        </div>
+        <div class="card-text">
+            <p>{images here/upload form}</p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

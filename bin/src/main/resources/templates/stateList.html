@@ -1,9 +1,9 @@
-<!--SAVED/Favorited PARKS-->
+<!--STATE PAGE-->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Saved Parks</title>
+    <title>State List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,8 +12,6 @@
 </head>
 <body>
 <!--Navbar-->
-
-<!--<div th:replace="fragments/navbar"></div>-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">National Parks Trip Planner</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,72 +19,65 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#">Home</a>
-<!--            <a class="nav-item nav-link" href="#">Sign Up</a>-->
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Sign Up</a>
             <!--  IF signed-in-->
-            <a class="nav-item nav-link" href="#">Logout</a>
-
-<!--            <a class="nav-item nav-link active" href="#">Saved Parks <span class="sr-only">(current)</span></a></a>-->
-<!--            <a class="nav-item nav-link" href="#">Visited Parks</a>-->
+                        <a class="nav-item nav-link" href="#">Logout</a>
+                        <a class="nav-item nav-link" href="#">Saved Parks</a>
         </div>
     </div>
 </nav>
 
-<ul class="nav nav-tabs">
-    <li role="presentation"><a href="#">Profile</a></li>
-    <li role="presentation"><a href="#">Visited Parks</a></li>
-    <li role="presentation" class="active"><a href="#">Saved Parks</a></li>
-</ul>
-
+<!--State Title-->
 <main role="main">
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-3">@{userName}'s Saved Parks</h1>
-            <p>Where do you want to go next? Save your next park here.</p>
+            <h1 class="display-3">{stateName}</h1>
+            <p>These are the national parks in {stateName}:</p>
         </div>
     </div>
 </main>
 
-<!--User info-->
 <div class="container">
     <div class="row">
         <div class="card col-md-3 small-product-card">
-            <!--    <img class="card-img-top" src="" alt="Card image cap">-->
+<!--            <a class="card-img"/></a>-->
             <div class="card-body">
                 <div class="card-title">
-                    <h1>{savedPark} #1</h1>
+                    <h1> Park 1</h1>
                 </div>
                 <div class="card-text">
-                    <p>{parkDescription} / TBD</p>
+                <p>Park description</p>
                 </div>
+                <a href="#" class="btn btn-primary">Learn More</a>
             </div>
         </div>
         <div class="card col-md-3 small-product-card">
+            <!--            <a class="card-img"/></a>-->
             <div class="card-body">
                 <div class="card-title">
-                    <h1>{savedPark} #2</h1>
+                    <h1> Park 2</h1>
                 </div>
                 <div class="card-text">
-                    <p>{parkDescription} / TBD</p>
+                    <p>Park description</p>
                 </div>
+                <a href="#" class="btn btn-primary">Learn More</a>
             </div>
         </div>
         <div class="card col-md-3 small-product-card">
+            <!--            <a class="card-img"/></a>-->
             <div class="card-body">
                 <div class="card-title">
-                    <h1>{savedPark} #3</h1>
+                    <h1> Park 3</h1>
                 </div>
                 <div class="card-text">
-                    <p>{parkDescription} / TBD</p>
+                    <p>Park description</p>
                 </div>
+                <a href="#" class="btn btn-primary">Learn More</a>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
 
 </body>
 </html>
