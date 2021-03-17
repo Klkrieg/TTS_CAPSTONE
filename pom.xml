@@ -66,11 +66,11 @@
 		</dependency>
 	
 <!-- for JSON file link -->
-	    <dependency>
-	    	<groupId>com.fasterxml.jackson.core</groupId>
-	    	<artifactId>jackson-databind</artifactId>
-	    	<version>2.12.2</version>
-		</dependency>
+<!--	    <dependency>-->
+<!--	    	<groupId>com.fasterxml.jackson.core</groupId>-->
+<!--	    	<artifactId>jackson-databind</artifactId>-->
+<!--	    	<version>2.12.2</version>-->
+<!--		</dependency>-->
 
 	</dependencies>
 	<build>
