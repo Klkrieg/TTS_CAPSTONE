@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Map;
+
 @Controller
 public class StateListController {
 
@@ -37,6 +39,15 @@ public class StateListController {
         ResponseWrapper responseWrapper = responseService.callByState("parks", request.getStateCode());
         model.addAttribute("parksInfo", responseWrapper.getData());
 
+        // Checking
+        System.out.println(request.stateCode);
+        System.out.println(responseWrapper);
+        for(DataField park : responseWrapper.getData()) {
+            System.out.println(park.getFullName());
+            for(Map<String, String> image : park.getImages()){
+                System.out.println(image.get("credit"));
+            }
+        }
         return "stateList";
     }
 

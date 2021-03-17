@@ -20,9 +20,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
         <!-- Visible if user is not yet logged in  -->
-            <a class="nav-item nav-link" href="#">Home</span></a>
-            <a class="nav-item nav-link" href="#">Login</a>
-            <a class="nav-item nav-link" href="#">Sign Up</a>
+            <a class="nav-item nav-link" th:href="@{/}">Home</span></a>
+            <a class="nav-item nav-link" th:href="@{/login}">Login</a>
+            <a class="nav-item nav-link" th:href="@{/signup}">Sign Up</a>
 
             <!--  All visible if user is logged in-->
             <a class="nav-item nav-link" href="#">Logout</a>
