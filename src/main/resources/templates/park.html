@@ -1,5 +1,7 @@
+<!--Individual Park is selected, this page shows up-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
     <title>Park Information</title>
@@ -10,7 +12,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+
 <!--Navbar-->
+<!--<div th:replace="fragments/navbar"></div>-->
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">National Parks Trip Planner</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,11 +23,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Sign Up</a>
+            <a class="nav-item nav-link" href="#">Home</a>
+<!--            <a class="nav-item nav-link" href="#">Sign Up</a>-->
             <!--  IF signed-in-->
                         <a class="nav-item nav-link" href="#">Logout</a>
+                        <a class="nav-item nav-link" href="#">Profile</a>
                         <a class="nav-item nav-link" href="#">Saved Parks</a>
+                        <a class="nav-item nav-link" href="#">Visited Parks</a>
         </div>
     </div>
 </nav>
@@ -108,6 +115,18 @@
 
                 </div>
                 <a href="#" class="btn btn-primary">NPS Website</a>
+            </div>
+        </div>
+        <div class="card col-md-3 small-product-card">
+            <!--            <a class="card-img"/></a>-->
+            <div class="card-body">
+                <div class="card-title">
+                    <h1>Save this Park:</h1>
+                </div>
+                <div class="card-text">
+                    <button type="button" class="btn btn-primary">Add to favorites</button><br><br>
+                    <button type="button" class="btn btn-success">Add to visited</button>
+                </div>
             </div>
         </div>
     </div>

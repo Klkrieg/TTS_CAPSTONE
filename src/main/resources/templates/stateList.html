@@ -1,6 +1,6 @@
 <!--STATE PAGE-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
     <title>State List</title>
@@ -12,6 +12,8 @@
 </head>
 <body>
 <!--Navbar-->
+
+<!--<div th:replace="fragments/navbar"></div>-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">National Parks Trip Planner</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,11 +21,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Sign Up</a>
-            <!--  IF signed-in-->
+            <a class="nav-item nav-link" href="#">Home </a>
+
+            <!-- If not signed in            -->
+            <!-- <a class="nav-item nav-link" href="#">Sign Up</a>-->
+
+            <!--  If signed-in-->
                         <a class="nav-item nav-link" href="#">Logout</a>
-                        <a class="nav-item nav-link" href="#">Saved Parks</a>
+<!--                        <a class="nav-item nav-link" href="#">Profile</a>-->
+<!--                        <a class="nav-item nav-link" href="#">Saved Parks</a>-->
+<!--                        <a class="nav-item nav-link" href="#">Visited Parks</a>-->
         </div>
     </div>
 </nav>
@@ -38,16 +45,28 @@
     </div>
 </main>
 
+
+<!--List of National Parks in state selected populates here in the cards-->
 <div class="container">
     <div class="row">
         <div class="card col-md-3 small-product-card">
-<!--            <a class="card-img"/></a>-->
             <div class="card-body">
                 <div class="card-title">
-                    <h1> Park 1</h1>
+                    <h1> {parkName} 1</h1>
                 </div>
                 <div class="card-text">
-                <p>Park description</p>
+                <p>{parkDescription}</p>
+                </div>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+        <div class="card col-md-3 small-product-card">
+            <div class="card-body">
+                <div class="card-title">
+                    <h1>{parkName} 2</h1>
+                </div>
+                <div class="card-text">
+                    <p>{parkDescription}</p>
                 </div>
                 <a href="#" class="btn btn-primary">Learn More</a>
             </div>
@@ -56,22 +75,10 @@
             <!--            <a class="card-img"/></a>-->
             <div class="card-body">
                 <div class="card-title">
-                    <h1> Park 2</h1>
+                    <h1>{parkName} 3</h1>
                 </div>
                 <div class="card-text">
-                    <p>Park description</p>
-                </div>
-                <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-        </div>
-        <div class="card col-md-3 small-product-card">
-            <!--            <a class="card-img"/></a>-->
-            <div class="card-body">
-                <div class="card-title">
-                    <h1> Park 3</h1>
-                </div>
-                <div class="card-text">
-                    <p>Park description</p>
+                    <p>{parkDescription}</p>
                 </div>
                 <a href="#" class="btn btn-primary">Learn More</a>
             </div>

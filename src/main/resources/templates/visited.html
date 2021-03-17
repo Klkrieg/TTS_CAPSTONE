@@ -1,0 +1,138 @@
+<!--Already visited-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>Visited Parks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--Navbar-->
+<!--<div th:replace="fragments/navbar"></div>-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">National Parks Trip Planner</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Home</a>
+            <!-- If not signed in   -->
+            <!--  <a class="nav-item nav-link" href="#">Sign Up</a> -->
+
+            <!--  IF signed-in-->
+            <a class="nav-item nav-link" href="#">Logout</a>
+<!--            <a class="nav-item nav-link" href="#">Saved Parks</a>-->
+<!--            <a class="nav-item nav-link active" href="#">Visited Parks<span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<ul class="nav nav-tabs">
+    <li role="presentation"><a href="#">Profile</a></li>
+    <li role="presentation" class="active"><a href="#">Visited Parks</a></li>
+    <li role="presentation"><a href="#">Saved Parks</a></li>
+</ul>
+
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">National Parks @{userName} Has Visited</h1>
+            <p>Record your memories, earn park badges, and track the dates of your travels.</p>
+        </div>
+    </div>
+</main>
+
+<!--Visited Parks-->
+<div class="container">
+<div class="row">
+    <div class="card col-md-3 small-product-card">
+            <img class="card-img-top" src="https://image.shutterstock.com/image-vector/acadia-national-park-logo-sticker-600w-1928133191.jpg" alt="Card image cap">
+        <div class="card-body">
+            <div class="card-title">
+                <h1>{visitedPark} #1</h1>
+            </div>
+            <div class="card-text">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Notes on your trip...</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="card col-md-3 small-product-card">
+        <img class="card-img-top" src="https://image.shutterstock.com/image-vector/big-bend-national-park-vector-600w-1929268745.jpg" alt="Card image cap">
+        <div class="card-body">
+            <div class="card-title">
+                <h1>{visitedPark} #2</h1>
+            </div>
+            <div class="card-text">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Notes on your trip...</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="card col-md-3 small-product-card">
+        <img class="card-img-top" src="https://image.shutterstock.com/image-vector/wild-bison-on-yosemite-national-600w-1652815735.jpg" alt="Card image cap">
+        <div class="card-body">
+            <div class="card-title">
+                <h1>{visitedPark} #3</h1>
+            </div>
+            <div class="card-text">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Notes on your trip...</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="card col-md-3 small-product-card">
+        <img class="card-img-top" src="https://image.shutterstock.com/image-vector/arches-national-park-emblem-logo-600w-1928265956.jpg" alt="Card image cap">
+        <div class="card-body">
+            <div class="card-title">
+                <h1>{visitedPark} #4</h1>
+            </div>
+            <div class="card-text">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Notes on your trip...</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--User name & profile pic
+
+- "My trips to National Parks"
+-->
+
+<!-- Container for badges
+- scroll horizontally functionality
+-->
+
+<!--Cards for visited parks
+- Name
+- Date of visit
+- upload box for pics
+- text box to enter and then *post* notes on trip
+- corresponding badge w/ park?
+-->
+
+
+</body>
+</html>

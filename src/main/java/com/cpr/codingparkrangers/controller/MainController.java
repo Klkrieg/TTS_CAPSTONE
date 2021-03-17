@@ -15,7 +15,7 @@ public class MainController {
     @Autowired
     ResponseService responseService;
 
-    @GetMapping
+    @GetMapping(value = "/")
     public String mainPage(Model model){
         model.addAttribute("request", new Request());
         return "index";
