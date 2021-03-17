@@ -23,7 +23,26 @@
     padding: 2rem;
 
  }
-/*
 .carousel{
-    height: 36rem;
-}*/
+    height: 60vh;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: auto;
+  height: 5rem;
+   position: absolute;
+}
+
+#user-info{
+position: absolute;
+top: 30%;
+left: 25%;
+justify-content: space-around;
+}
+
+#badges{
+display: flex;
+top: 15%;
+justify-content: space-around;
+}

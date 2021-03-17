@@ -43,6 +43,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/signup").permitAll()
             .antMatchers("/stateList").permitAll()
             .antMatchers("/park").permitAll()
+//            Annie testing to bypass security
+            .antMatchers("/profile").permitAll()
+            .antMatchers("/saved").permitAll()
+            .antMatchers("/visited").permitAll()
+//            END of testing
+
             .anyRequest()
             .authenticated().and().csrf().disable()
             .formLogin()

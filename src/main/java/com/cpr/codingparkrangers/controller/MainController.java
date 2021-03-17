@@ -16,13 +16,29 @@ public class MainController {
     ResponseService responseService;
 
     @GetMapping(value = "/")
-    public String mainPage(Model model){
+    public String mainPage(Model model) {
         model.addAttribute("request", new Request());
         System.out.print("Loaded index");
         return "index";
     }
 
+//    mapping between each "user tab"
+    @GetMapping(value = "/profile")
+    public String profilePage() {
+        return "profile";
+    }
 
+    @GetMapping(value = "/visited")
+    public String visitedParks() {
+        return "visited";
+    }
+
+    @GetMapping(value = "/saved")
+    public String savedParks() {
+        return "saved";
+    }
+
+}
 //    @PostMapping(value = "/")
 //    public String getGeneralInfo(Request request, Model model){
 //        ResponseWrapper responseWrapper = responseService.getGeneralInfo(request.getApiCategory(), request.getParkCode());
@@ -36,4 +52,4 @@ public class MainController {
 //        return "index";
 //    }
 
-}
+
