@@ -9,6 +9,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.validation.Valid;
+
 @Controller
 public class AuthorizationController {
   @Autowired
@@ -16,6 +18,13 @@ public class AuthorizationController {
 
   @GetMapping("/login")
   public String login(){
+    return "login";
+  }
+  @GetMapping("/login-fail")
+  public String failedLogin(Model model){
+    User newUser = new User();
+    model.addAttribute("error", true);
+    model.addAttribute("user", newUser);
     return "login";
   }
 
@@ -27,7 +36,7 @@ public class AuthorizationController {
   }
 
   @PostMapping("/signup")
-  public String createNewUser(User user, BindingResult bindingResult,Model model){
+  public String createNewUser(@Valid User user, BindingResult bindingResult, Model model){
     User userExists = userService.findByUsername(user.getUsername());
     if(userExists != null){
       bindingResult.rejectValue("username", "error.user", "That username is taken.");

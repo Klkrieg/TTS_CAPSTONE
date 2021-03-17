@@ -24,7 +24,7 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" th:placeholder="Password" id="password" class="form-control" />
             </div>
-            <div align="center" th:if="${param.error}">
+            <div align="center" th:if="${error == true}">
                 <h4 style="color: red">Login unsuccessful.</h4>
             </div>
             <button type="submit" value="Login" class="btn btn-success btn-block">Login</button>

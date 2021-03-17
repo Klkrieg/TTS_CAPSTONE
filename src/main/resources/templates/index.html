@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,7 +7,7 @@
 <body>
     <h3>Welcome to these great parks!</h3>
 <!--    <p th:text="${park.name}">Hark!</p>-->
-
+    <div></div>
     <form th:action="@{/}" th:object="${request}" method="post" autocomplete="off" >
         <div class="form-group">
             <input type="text" th:field="*{apiCategory}" placeholder="API Category" class="form-control"/>
