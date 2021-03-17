@@ -1,23 +1,89 @@
+<!--PUBLIC HOME PAGE -->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>National Park Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-    <h3>Welcome to these great parks!</h3>
-<!--    <p th:text="${park.name}">Hark!</p>-->
+<!--Navbar-->
+<div th:replace="fragments/navbar"></div>
 
-    <form th:action="@{/}" th:object="${request}" method="post" autocomplete="off" >
-        <div class="form-group">
-            <input type="text" th:field="*{apiCategory}" placeholder="API Category" class="form-control"/>
-            <input type="text" th:field="*{parkCode}" placeholder="Park Code" class="form-control"/>
+<!--MAIN TITLE PAGE AND STATE SELECTION-->
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">National Parks Search</h1>
+            <p>Where you can customize your national park experience!</p>
+            <form class="form-inline" th:action="@{/stateList}" th:object="${request}" method="post" autocomplete="off">
+                <select class="form-control form-control-lg" id="inlineFormCustomSelectPref" th:field="*{stateCode}">
+                    <option th:value ="0" selected>Choose A State</option>
+                    <option th:value="al">Alabama</option>
+                    <option th:value="ak">Alaska</option>
+                    <option th:value="az">Arizona</option>
+                    <option th:value="ar">Arkansas</option>
+                    <option th:value="ca">California</option>
+                    <option th:value="co">Colorado</option>
+                    <option th:value="ct">Connecticut</option>
+                    <option th:value="de">Delaware</option>
+                    <option th:value="fl">Florida</option>
+                    <option th:value="ga">Georgia</option>
+                    <option th:value="hi">Hawaii</option>
+                    <option th:value="id">Idaho</option>
+                    <option th:value="il">Illinois</option>
+                    <option th:value="in">Indiana</option>
+                    <option th:value="ia">Iowa</option>
+                    <option th:value="ks">Kansas</option>
+                    <option th:value="ky">Kentucky</option>
+                    <option th:value="la">Louisiana</option>
+                    <option th:value="me">Maine</option>
+                    <option th:value="md">Maryland</option>
+                    <option th:value="ma">Massachusetts</option>
+                    <option th:value="mi">Michigan</option>
+                    <option th:value="mn">Minnesota</option>
+                    <option th:value="ms">Mississippi</option>
+                    <option th:value="mo">Missouri</option>
+                    <option th:value="mt">Montana</option>
+`<!--                    <option th:value="ne">Nebraska</option>-->
+`                    <option th:value="nv">Nevada</option>
+                    <option th:value="nh">New Hampshire</option>
+                    <option th:value="nj">New Jersey</option>
+                    <option th:value="nm">New Mexico</option>
+                    <option th:value="ny">New York</option>
+                    <option th:value="nc">North Carolina</option>
+                    <option th:value="nd">North Dakota</option>
+                    <option th:value="oh">Ohio</option>
+                    <option th:value="ok">Oklahoma</option>
+<!--                    <option th:value="or">Oregon</option>-->
+                    <option th:value="pa">Pennsylvania</option>
+                    <option th:value="ri">Rhode Island</option>
+                    <option th:value="sc">South Carolina</option>
+                    <option th:value="sd">South Dakota</option>
+                    <option th:value="tn">Tennessee</option>
+                    <option th:value="tx">Texas</option>
+                    <option th:value="ut">Utah</option>
+                    <option th:value="vt">Vermont</option>
+                    <option th:value="va">Virginia</option>
+                    <option th:value="wa">Washington</option>
+                    <option th:value="wv">West Virginia</option>
+                    <option th:value="wi">Wisconsin</option>
+                    <option th:value="wy">Wyoming</option>
+                </select>
+                <button class="btn btn-primary" name="Submit" th:value="Submit" type="Submit">Submit</button>
+            </form>
         </div>
-        <div class="form-group">
-            <button class="btn btn-md btn-primary btn-block" name="Submit" value="Submit" type="Submit">
-                Get Park</button>
-        </div>
-    </form>
+
+    </div>
+</main>
+
+
+
 
 
 </body>

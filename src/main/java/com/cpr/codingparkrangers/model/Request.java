@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Request {
+    //For retrieving from API
     private String apiCategory;
+    public String stateCode;
     private String parkCode;
+
 }

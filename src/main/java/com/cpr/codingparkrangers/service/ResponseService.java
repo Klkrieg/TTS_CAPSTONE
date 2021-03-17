@@ -12,7 +12,32 @@ public class ResponseService {
     @Value("${api_key}")
     private String apiKey;
 
-    public ResponseWrapper getGeneralInfo(String apiCategory, String parkCode) {
+    public ResponseWrapper callByState(String apiCategory, String stateCode) {
+        String url = "https://developer.nps.gov/api/v1/" + apiCategory + "?stateCode=" +
+                stateCode + "&api_key=" + apiKey;
+        System.out.println(url);
+        RestTemplate restTemplate = new RestTemplate();
+        try {
+            return restTemplate.getForObject(url, ResponseWrapper.class);
+        }
+        catch (HttpClientErrorException ex) {
+            System.out.print(ex);
+            return null;
+        }
+    }
+
+    public String getStateName(String stateCode) {
+
+        System.out.println("State code is" + stateCode);
+        if(stateCode.equals("az")) {
+            System.out.println("Arizona");
+            return "Arizona";
+        } else {
+            return "null";
+        }
+    }
+
+    public ResponseWrapper callByPark(String apiCategory, String parkCode) {
         String url = "https://developer.nps.gov/api/v1/" + apiCategory + "?parkCode=" +
                 parkCode + "&api_key=" + apiKey;
         System.out.println(url);
@@ -25,6 +50,8 @@ public class ResponseService {
             return null;
         }
     }
+
+
 
 
 }
