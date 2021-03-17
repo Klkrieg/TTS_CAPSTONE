@@ -18,22 +18,22 @@ public class MainController {
     @GetMapping(value = "/")
     public String mainPage(Model model){
         model.addAttribute("request", new Request());
+        System.out.print("Loaded index");
         return "index";
     }
 
-    @PostMapping(value = "/")
-    public String getGeneralInfo(Request request, Model model){
-        ResponseWrapper responseWrapper = responseService.getGeneralInfo(request.getApiCategory(), request.getParkCode());
 
-        // Prints park code and park object
-        System.out.println(request.getParkCode());
-        System.out.println(responseWrapper);
-        System.out.println(responseWrapper.getData());
+//    @PostMapping(value = "/")
+//    public String getGeneralInfo(Request request, Model model){
+//        ResponseWrapper responseWrapper = responseService.getGeneralInfo(request.getApiCategory(), request.getParkCode());
 //
-//        model.addAttribute("park", park);
-        return "index";
-    }
-
-
+//        // Prints park code and park object
+//        System.out.println(request.getParkCode());
+//        System.out.println(responseWrapper);
+//        System.out.println(responseWrapper.getData());
+////
+////        model.addAttribute("park", park);
+//        return "index";
+//    }
 
 }

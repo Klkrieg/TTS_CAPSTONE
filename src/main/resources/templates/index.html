@@ -11,27 +11,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<!--Navbar fragment-->
+<!--Navbar-->
 <div th:replace="fragments/navbar"></div>
-
-<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
-<!--    <a class="navbar-brand" href="#">National Parks Trip Planner</a>-->
-<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--        <span class="navbar-toggler-icon"></span>-->
-<!--    </button>-->
-<!--    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
-<!--        <div class="navbar-nav">-->
-<!--            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
-<!--            <a class="nav-item nav-link" href="#">Login</a>-->
-<!--            <a class="nav-item nav-link" href="#">Sign Up</a>-->
-
-<!--            &lt;!&ndash;  IF signed-in&ndash;&gt;-->
-<!--    &lt;!&ndash; <a class="nav-item nav-link" href="#">Logout</a>&ndash;&gt;-->
-<!--    &lt;!&ndash; <a class="nav-item nav-link" href="#">Saved Parks</a>&ndash;&gt;-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</nav>-->
-
 
 <!--MAIN TITLE PAGE AND STATE SELECTION-->
 <main role="main">
@@ -39,8 +20,8 @@
         <div class="container">
             <h1 class="display-3">National Parks Search</h1>
             <p>Where you can customize your national park experience!</p>
-            <form class="form-inline" >
-                <select class="form-control form-control-lg" id="inlineFormCustomSelectPref">
+            <form class="form-inline" th:action="@{/stateList}" th:object="${request}" method="post" autocomplete="off">
+                <select class="form-control form-control-lg" id="inlineFormCustomSelectPref" th:field="*{stateCode}">
                     <option th:value ="0" selected>Choose A State</option>
                     <option th:value="al">Alabama</option>
                     <option th:value="ak">Alaska</option>
@@ -68,8 +49,8 @@
                     <option th:value="ms">Mississippi</option>
                     <option th:value="mo">Missouri</option>
                     <option th:value="mt">Montana</option>
-                    <option th:value="ne">Nebraska</option>
-                    <option th:value="nv">Nevada</option>
+`<!--                    <option th:value="ne">Nebraska</option>-->
+`                    <option th:value="nv">Nevada</option>
                     <option th:value="nh">New Hampshire</option>
                     <option th:value="nj">New Jersey</option>
                     <option th:value="nm">New Mexico</option>
@@ -78,7 +59,7 @@
                     <option th:value="nd">North Dakota</option>
                     <option th:value="oh">Ohio</option>
                     <option th:value="ok">Oklahoma</option>
-                    <option th:value="or">Oregon</option>
+<!--                    <option th:value="or">Oregon</option>-->
                     <option th:value="pa">Pennsylvania</option>
                     <option th:value="ri">Rhode Island</option>
                     <option th:value="sc">South Carolina</option>
@@ -93,7 +74,8 @@
                     <option th:value="wi">Wisconsin</option>
                     <option th:value="wy">Wyoming</option>
                 </select>
-                <a class="btn btn-primary" href="/parks" role="button">Submit</a></p>
+
+                <button class="btn btn-primary" name="Submit" th:value="Submit" type="Submit">Submit</button>
             </form>
         </div>
 
