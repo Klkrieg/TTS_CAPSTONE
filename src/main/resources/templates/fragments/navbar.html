@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
     </head>
 </head>
 <body>
@@ -20,11 +19,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <!-- Visible if user is not yet logged in  -->
+            <a class="nav-item nav-link" href="#">Home</span></a>
+            <a class="nav-item nav-link" href="#">Login</a>
             <a class="nav-item nav-link" href="#">Sign Up</a>
-            <!--  IF signed-in-->
+
+            <!--  All visible if user is logged in-->
             <a class="nav-item nav-link" href="#">Logout</a>
             <a class="nav-item nav-link" href="#">Saved Parks</a>
+            <a class="nav-item nav-link" href="#">Visited Parks</a>
         </div>
     </div>
 </nav>

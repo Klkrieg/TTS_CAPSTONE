@@ -5,44 +5,40 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!--    <link rel="stylesheet" href="static/index.css">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-<div th:replace="fragments/navbar"></div>
+<!--Navbar fragment-->
+<!--<div th:replace="fragments/navbar"></div>-->
 
-<main role="main">
-    <div class="jumbotron">
-        <div class="container">
-            <h1 class="display-3">National Parks Search</h1>
-            <p>Where you can customize your national park experience!</p>
-             <form class="form-inline">
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                <option selected>Choose...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-                </select><a class="btn btn-primary" href="/parks" role="button">Try it out &raquo;</a></p>
-        </form>
-        </div>
 
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">National Parks Trip Planner</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Home </a>
 
-    <div class="container">
-        <div class="row">
-            <div class="card col-md-3 small-product-card">
-                <a class="card-img"/></a>
-                <div class="card-body">
-<!--                    <div class="card-title">-->
-<!--                    </div>-->
-                </div>
-            </div>
+            <!-- If not signed in            -->
+            <!-- <a class="nav-item nav-link" href="#">Sign Up</a>-->
+
+            <!--  If signed-in-->
+<!--            <a class="nav-item nav-link active" href="#">Login</a>-->
+            <a class="nav-item nav-link" href="#">Logout</a>
+<!--            <a class="nav-item nav-link" href="#">Saved Parks</a>-->
+<!--            <a class="nav-item nav-link" href="#">Visited Parks</a>-->
         </div>
     </div>
-</main>
+</nav>
 
-<!--<footer th:replace="fragments/fragments :: footer"></footer>-->
+
+
+
 </body>
 </html>
