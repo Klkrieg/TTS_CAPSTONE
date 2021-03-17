@@ -20,7 +20,7 @@
         <div class="container">
             <h1 class="display-3">National Parks Search</h1>
             <p>Where you can customize your national park experience!</p>
-            <form class="form-inline" th:action="@{/stateList}" th:object="${request}" method="post" autocomplete="off">
+            <form class="form-inline" th:object="${request}" th:action="@{/stateList}" method="get" autocomplete="off">
                 <select class="form-control form-control-lg" id="inlineFormCustomSelectPref" th:field="*{stateCode}">
                     <option th:value ="0" selected>Choose A State</option>
                     <option th:value="al">Alabama</option>

@@ -21,6 +21,10 @@ public class MainController {
         System.out.print("Loaded index");
         return "index";
     }
+    @GetMapping(value = "/park")
+    public String park(){
+        return "park";
+    }
 
 //    mapping between each "user tab"
     @GetMapping(value = "/profile")
