@@ -22,5 +22,9 @@ public class DataField {
     private String fullName;
     private String description;
 
+    //test
+    private Map<String, String>[] images;
+
+
 
 }
