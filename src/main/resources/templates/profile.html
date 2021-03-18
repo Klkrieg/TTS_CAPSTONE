@@ -19,6 +19,7 @@
     <li role="presentation" class="active"><a href="/profile">Profile</a></li>
     <li role="presentation"><a href="/visited">Visited Parks</a></li>
     <li role="presentation"><a href="/saved">Saved Parks</a></li>
+    <li role="presentation"><a href="/reservation">Reservations</a></li>
 </ul>
 
 <!--Profile Title-->
@@ -35,87 +36,72 @@
     <div class="container" id="badges">
         <!-- Badges -->
         <div class="row">
-            <div class="col-xs-6 col-md-1 mr-4 ">
-                <img src="../static/images/Asset 1Acadia.png" alt="acadia test logo" class="avatar ">
+          <div class="col-xs-6 col-md-1 mr-4">
+                <img class="img-thumbnail" src="https://64.media.tumblr.com/551450c8a110f671b8c5fead4bd8569a/9cf673893aa73ae1-f6/s250x400/fd6e5971581f08b3cce9c0badc1b4e95d7f7f29d.png" alt="acadia logo" />
             </div>
             <div class="col-xs-6 col-md-1 mr-4">
-                <img src="../static/images/Asset 1GrandCanyon.png" alt="big bend test logo" class="avatar">
+                <img class="img-thumbnail" src="https://64.media.tumblr.com/d9fb0d6272a4e713900a3d523f9b1874/32fb74025ed2a0ba-4b/s250x400/c63159feabd3176a2639180c429ecdf8103ba72d.png" alt="grand teton logo" />
             </div>
             <div class="col-xs-6 col-md-1 mr-4">
-                <img src="../static/images/Asset 1RockyMtn.png" alt="yellowstone test logo" class="avatar">
+                <img class="img-thumbnail" src="https://64.media.tumblr.com/70220ba537603d647ad65287e6a20167/32fb74025ed2a0ba-d4/s250x400/69f021e1d98c00d2d4ec7496d8fe46fa85811592.png" alt="rocky mountain logo" />
             </div>
             <div class="col-xs-6 col-md-1 mr-4">
-                <img src="../static/images/Asset 1Yosemite.png" alt="yosemite test logo" class="avatar">
+                <img class="img-thumbnail" src="https://64.media.tumblr.com/369ccdc551a0c13a86e5a426b587b7bb/32fb74025ed2a0ba-7f/s250x400/5ef6a10f9c7365e443ba341b017e75144177ddc7.png" alt="joshua tree logo" />
             </div>
             <div class="col-xs-6 col-md-1 mr-4">
-                <img src="../static/images/Asset 1Zion.png" alt="arches test logo" class="avatar">
+                <img class="img-thumbnail" src="https://64.media.tumblr.com/0f245963ea5dcf908fb43d80b91f047f/32fb74025ed2a0ba-7a/s250x400/66a69d798d4ce2b84cd1c2663e5995ca60cf42bd.png" alt="yosemite logo" />
             </div>
         </div>
-<!--<div class="row">-->
-<!--    <div class="col-xs-6 col-md-1">-->
-<!--&lt;!&ndash;        NEED TO IMPORT FOLDER OF PNG IMAGES FROM GOOGLE DRIVE for badges&ndash;&gt;-->
-<!--        <img src="./static/Yosemite.png" alt="badge 1" class="avatar">-->
-<!--    </div>-->
-<!--    <div class="col-xs-6 col-md-1">-->
-<!--        <img src="#" alt="badge 2" class="avatar">-->
-<!--    </div>-->
-<!--    <div class="col-xs-6 col-md-1">-->
-<!--        <img src="#" alt="badge 3" class="avatar">-->
-<!--    </div>-->
-<!--    <div class="col-xs-6 col-md-1">-->
-<!--    <img src="#" alt="badge 4" class="avatar">-->
-<!--    </div>-->
-<!--    <div class="col-xs-6 col-md-1">-->
-<!--        <img src="#" alt="badge 5" class="avatar">-->
-<!--    </div>-->
-<!--</div>-->
 
 <!--User info-->
 <div class="container">
-    <div class="row">
-        <div class="card col-md-3 small-product-card">
-            <div class="card-body">
-                <div class="card-title">
-                    <h1>@happycamper</h1>
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">@happycamper</h3>
+                    <p class="card-text"><ul>
+                    <li>Age: 27</li>
+                    <li>About: Adventure seeker, gemini, lover of the outdoors!</li>
+                    <li>Location: Autin, TX</li>
+                </ul>
+                    </p>
                 </div>
-                <div class="card-text">
-                    <ul>
-                        <li>Age: 27</li>
-                        <li>About: Adventure seeker, gemini, lover of the outdoors!</li>
-                        <li>Location: Autin, TX</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="card col-md-3 small-product-card">
-<!--    <img class="card-img-top" src="" alt="Card image cap">-->
-            <div class="card-body">
-                <div class="card-title">
-                    <h1>Parks Visited</h1>
-                </div>
-                <div class="card-text">
-                    <ul>
-                        <li>Acadia National Park</li>
-                        <li>Canyonlands National Park</li>
-                        <li>Big Bend National Park</li>
-                        <li>Yosemite National Park</li>
-                    </ul>
                 </div>
             </div>
         </div>
-        <div class="card col-md-3 small-product-card">
-<!--STATIC CALENDAR IMAGE IN THS CARD-->
-             <img class="card-img-top" src="" alt="calendar heatmap image here">
-            <div class="card-body">
-                <div class="card-title">
-                    <h1>Trip Tracker</h1>
-                </div>
-                <div class="card-text">
-                    <p>@happycamper's trips to National Parks.</p>
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">Parks Visited</h3>
+                    <p class="card-text"><ul>
+                    <li>Acadia National Park</li>
+                    <li>Grand Teton National Park</li>
+                    <li>Rocky Mountain National Park</li>
+                    <li>Joshua Tree National Park</li>
+                    <li>Yosemite National Park</li>
+                </ul>
+                    </p>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">Trip Tracker</h3>
+                    <p class="card-text">Check out this heat map of @happycamper's trips to National Parks!</p>
+                </div>
+                <img class="img-fluid w-100" src="https://64.media.tumblr.com/51c2e60ffcbb11aaacbb59b81a733d67/eb275f2b3484b6e9-7b/s540x810/3a9a43254f3feef4ac18c28740d766c49ec5a84e.jpg" alt="calendar heatmap image here"/>
+            </div>
+        </div>
+    </div>
+    </div>
+
 </div>
 </div>
 </body>
 </html>
+

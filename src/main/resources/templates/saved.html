@@ -19,6 +19,7 @@
     <li role="presentation"><a href="/profile">Profile</a></li>
     <li role="presentation"><a href="/visited">Visited Parks</a></li>
     <li role="presentation" class="active"><a href="/saved">Saved Parks</a></li>
+    <li role="presentation"><a href="/reservation">Reservations</a></li>
 </ul>
 
 <main role="main">
@@ -32,35 +33,47 @@
 
 <!--User's Saved Park Cards-->
 <div class="container">
-    <div class="row">
-        <div class="card col-md-3 small-product-card">
-            <!--    <img class="card-img-top" src="" alt="Card image cap">-->
-            <div class="card-body">
-                <div class="card-title">
-                    <h1>Big Bend National Park</h1>
-                </div>
-                <div class="card-text">
-                    <p>{parkDescription} / TBD</p>
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img style="max-width: 300px; height: auto" src="https://64.media.tumblr.com/01b8853df7748836f133430dc1bfc23e/32fb74025ed2a0ba-63/s250x400/68fabaedf554cdf4ab63fe8ca824ed8343e1a70a.png" alt="Glacier Nat'l Park">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">Glacier National Park</h3>
+                    <p class="card-text"></p>
+                                        <p class="card-text"><small class="text-muted">Last updated 10 mins ago</small></p>
+                    <a href="/reservation"><button class="btn btn-primary">Reserve</button></a>
                 </div>
             </div>
         </div>
-        <div class="card col-md-3 small-product-card">
-            <div class="card-body">
-                <div class="card-title">
-                    <h1>Acadia National Park</h1>
-                </div>
-                <div class="card-text">
-                    <p>{parkDescription} / TBD</p>
+    </div>
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img style="max-width: 300px; height: auto" src="https://64.media.tumblr.com/06ceac09b09deecfec933281dfe03aaa/32fb74025ed2a0ba-8c/s250x400/604defb428757a35f7adebce40255ada3a8b2354.png" alt="Arches Nat'l Park">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">Arches National Park</h3>
+                    <p class="card-text"></p>
+                    <p class="card-text"><small class="text-muted">Last updated 2 days ago</small></p>
+                    <a href="/reservation"><button class="btn btn-primary">Reserve</button></a>
                 </div>
             </div>
         </div>
-        <div class="card col-md-3 small-product-card">
-            <div class="card-body">
-                <div class="card-title">
-                    <h1>Canyonlands National Park</h1>
-                </div>
-                <div class="card-text">
-                    <p>{parkDescription} / TBD</p>
+    </div>
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img style="max-width: 300px; height: auto" src="https://64.media.tumblr.com/02aaa383b07d74f4708eec8fa4e10ace/32fb74025ed2a0ba-f3/s250x400/0f68db926391d7d6001db28cf31e4bb63fccde55.png" alt="Olympic Nat'l Park">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">Olympic National Park</h3>
+                    <p class="card-text"></p>
+                    <p class="card-text"><small class="text-muted">Last updated 1 week ago</small></p>
+                    <a href="/reservation"><button class="btn btn-primary">Reserve</button></a>
                 </div>
             </div>
         </div>
@@ -68,6 +81,44 @@
 </div>
 
 
+<!--ANNIE'S OLD CODE NOT USED -->
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="card col-md-3 small-product-card">-->
+<!--                <img class="card-img-top" src="https://64.media.tumblr.com/01b8853df7748836f133430dc1bfc23e/32fb74025ed2a0ba-63/s250x400/68fabaedf554cdf4ab63fe8ca824ed8343e1a70a.png" alt="Glacier Nat'l Park"/>-->
+<!--            <div class="card-body">-->
+<!--                <div class="card-title">-->
+<!--                    <h1>Glacier National Park</h1>-->
+<!--                </div>-->
+<!--                <div class="card-text">-->
+<!--                    <p>{parkDescription} / TBD</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="card col-md-3 small-product-card">-->
+<!--            <img class="card-img-top" src="https://64.media.tumblr.com/06ceac09b09deecfec933281dfe03aaa/32fb74025ed2a0ba-8c/s250x400/604defb428757a35f7adebce40255ada3a8b2354.png" alt="Arches Nat'l Park"/>-->
+<!--            <div class="card-body">-->
+<!--                <div class="card-title">-->
+<!--                    <h1>Arches National Park</h1>-->
+<!--                </div>-->
+<!--                <div class="card-text">-->
+<!--                    <p>{parkDescription} / TBD</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="card col-md-3 small-product-card">-->
+<!--            <img class="card-img-top" src="https://64.media.tumblr.com/02aaa383b07d74f4708eec8fa4e10ace/32fb74025ed2a0ba-f3/s250x400/0f68db926391d7d6001db28cf31e4bb63fccde55.png" alt="Olympic Nat'l Park"/>-->
+<!--            <div class="card-body">-->
+<!--                <div class="card-title">-->
+<!--                    <h1>Olympic National Park</h1>-->
+<!--                </div>-->
+<!--                <div class="card-text">-->
+<!--                    <p>{parkDescription} / TBD</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 
