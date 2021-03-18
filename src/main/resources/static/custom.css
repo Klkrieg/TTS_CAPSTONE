@@ -1,4 +1,4 @@
-.jumbotron {
+#home-jumbo {
     background-image: url("/images/luca-bravo-VowIFDxogG4-unsplash.jpg");
     background-size: cover;
     height: 36rem;
@@ -15,8 +15,3 @@
     width: 50vw;
     padding: 2rem;
  }
-
-/*
-.carousel{
-    height: 36rem;
-}*/

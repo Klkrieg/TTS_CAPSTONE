@@ -1,47 +1,32 @@
-<!--Already visited-->
+<!--Already visited parks-->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head>
-    <meta charset="UTF-8">
-    <title>Visited Parks</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+<div th:replace="fragments/fragments :: head"></div>
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Visited Parks</title>-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+<!--</head>-->
 <body>
 <!--Navbar-->
-<!--<div th:replace="fragments/navbar"></div>-->
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">National Parks Trip Planner</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#">Home</a>
-            <!-- If not signed in   -->
-            <!--  <a class="nav-item nav-link" href="#">Sign Up</a> -->
-
-            <!--  IF signed-in-->
-            <a class="nav-item nav-link" href="#">Logout</a>
-<!--            <a class="nav-item nav-link" href="#">Saved Parks</a>-->
-<!--            <a class="nav-item nav-link active" href="#">Visited Parks<span class="sr-only">(current)</span></a>-->
-        </div>
-    </div>
-</nav>
+<div th:replace="fragments/fragments :: navbar"></div>
+<!--Profile Tabs-->
 <ul class="nav nav-tabs">
-    <li role="presentation"><a href="#">Profile</a></li>
-    <li role="presentation" class="active"><a href="#">Visited Parks</a></li>
-    <li role="presentation"><a href="#">Saved Parks</a></li>
+    <li role="presentation"><a href="/profile">Profile</a></li>
+    <li role="presentation" class="active"><a href="/visited">Visited Parks</a></li>
+    <li role="presentation"><a href="/saved">Saved Parks</a></li>
+    <li role="presentation"><a href="/reservation">Reservations</a></li>
 </ul>
 
 <main role="main">
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-3">National Parks @{userName} Has Visited</h1>
+            <h1 class="display-3">National Parks @happycamper Has Visited</h1>
             <p>Record your memories, earn park badges, and track the dates of your travels.</p>
         </div>
     </div>
@@ -51,64 +36,69 @@
 <div class="container">
 <div class="row">
     <div class="card col-md-3 small-product-card">
-            <img class="card-img-top" src="https://image.shutterstock.com/image-vector/acadia-national-park-logo-sticker-600w-1928133191.jpg" alt="Card image cap">
+<!--        class="card-img-top" src="Yosemite.png"-->
+            <img class="card-img-top" src="https://64.media.tumblr.com/0f245963ea5dcf908fb43d80b91f047f/32fb74025ed2a0ba-7a/s250x400/66a69d798d4ce2b84cd1c2663e5995ca60cf42bd.png" alt="yosemite logo" width="1000" />
         <div class="card-body">
             <div class="card-title">
-                <h1>{visitedPark} #1</h1>
+                <h1>Yosemite National Park</h1>
             </div>
             <div class="card-text">
                 <form>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Notes on your trip...</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <button type="button" class="btn btn-light">Submit</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     <div class="card col-md-3 small-product-card">
-        <img class="card-img-top" src="https://image.shutterstock.com/image-vector/big-bend-national-park-vector-600w-1929268745.jpg" alt="Card image cap">
+        <img class="card-img-top" src="https://64.media.tumblr.com/70220ba537603d647ad65287e6a20167/32fb74025ed2a0ba-d4/s250x400/69f021e1d98c00d2d4ec7496d8fe46fa85811592.png" alt="rocky mountain logo" width="1000" />
         <div class="card-body">
             <div class="card-title">
-                <h1>{visitedPark} #2</h1>
+                <h1>Rocky Mountain National Park</h1>
             </div>
             <div class="card-text">
                 <form>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Notes on your trip...</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <button type="button" class="btn btn-light">Submit</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     <div class="card col-md-3 small-product-card">
-        <img class="card-img-top" src="https://image.shutterstock.com/image-vector/wild-bison-on-yosemite-national-600w-1652815735.jpg" alt="Card image cap">
+        <img class="card-img-top" src="https://64.media.tumblr.com/551450c8a110f671b8c5fead4bd8569a/9cf673893aa73ae1-f6/s250x400/fd6e5971581f08b3cce9c0badc1b4e95d7f7f29d.png" alt="acadia logo" width="1000" />
         <div class="card-body">
             <div class="card-title">
-                <h1>{visitedPark} #3</h1>
+                <h1>Acadia National Park</h1>
             </div>
             <div class="card-text">
                 <form>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Notes on your trip...</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <button type="button" class="btn btn-light">Submit</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     <div class="card col-md-3 small-product-card">
-        <img class="card-img-top" src="https://image.shutterstock.com/image-vector/arches-national-park-emblem-logo-600w-1928265956.jpg" alt="Card image cap">
+        <img class="card-img-top" src="https://64.media.tumblr.com/369ccdc551a0c13a86e5a426b587b7bb/32fb74025ed2a0ba-7f/s250x400/5ef6a10f9c7365e443ba341b017e75144177ddc7.png" alt="Joshua tree logo" width="1000" />
         <div class="card-body">
             <div class="card-title">
-                <h1>{visitedPark} #4</h1>
+                <h1>Joshua Tree National Park</h1>
             </div>
             <div class="card-text">
                 <form>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Notes on your trip...</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <button type="button" class="btn btn-light">Submit</button>
                     </div>
                 </form>
             </div>
@@ -116,6 +106,8 @@
     </div>
 </div>
 </div>
+
+<div th:replace="fragments/fragments :: footer"></div>
 <!--User name & profile pic
 
 - "My trips to National Parks"

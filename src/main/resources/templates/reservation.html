@@ -1,13 +1,58 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<div th:replace="fragments/fragments :: head"></div>
+
 <!--<head>-->
-<!--  <meta charset="UTF-8">-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--  <title>Reservation</title>-->
-
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Profile</title>-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+<!--    <link rel="stylesheet" href="../static/index.css">-->
 <!--</head>-->
-<!--<body>-->
+<body>
+<!--Navbar-->
+<div th:replace="fragments/fragments :: navbar"></div>
+<!--Profile Tabs-->
+<ul class="nav nav-tabs">
+    <li role="presentation"><a href="/profile">Profile</a></li>
+    <li role="presentation"><a href="/visited">Visited Parks</a></li>
+    <li role="presentation"><a href="/saved">Saved Parks</a></li>
+    <li role="presentation" class="active"><a href="/reservation">Reservations</a></li>
+</ul>
 
+<!--Reservation Title-->
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Book a Reservation!</h1>
+        </div>
+    </div>
+</main>
+<div class="container">
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <img class='img-fluid w-100' src="https://64.media.tumblr.com/19e222b7a848ea1e6513b424b28177cb/aea9cd213dab8131-c9/s400x600/b358c39d22dfec6dd06f1d869ec7b64d5694f2e4.jpg" alt="2021 reservation map" />
+                    <h3 class="card-title">Reservation Status:</h3>
+                    <p class="card-text">Great date selection! As a final step press <i>'confirmation'</i> button below to finalize reservation and secure your stay for your selected dates.<br><br>
+                        We look forward to having you experience the great outdoors with us!</p>
+                    <a><button class="btn btn-primary">Confirm Now</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/fragments :: footer"></div>
+</body>
+</html>
+
+
+
+<!--PATRICIA'S CODE -->
 <!--<h1 style=font-family: Tahoma, style=font-size:20, style=font-color: #1A8763>-->
 <!--<p><i>{Park Name}</i> Reservation Status-->
 <!--</p>-->
