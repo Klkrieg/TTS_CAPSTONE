@@ -2,27 +2,38 @@
 
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head>
-    <meta charset="UTF-8">
-    <title>Park Information</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../static/custom.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div th:replace="fragments/fragments :: head"></div>
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Park Information</title>-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
 
-</head>
+<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+
+<!--    &lt;!&ndash;    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">&ndash;&gt;-->
+<!--&lt;!&ndash;    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>&ndash;&gt;-->
+<!--    &lt;!&ndash;    <link rel="stylesheet" type="text/css" href="../static/custom.css">&ndash;&gt;-->
+<!--</head>-->
 <body>
 
 <!--Navbar-->
-<div th:replace="fragments/navbar"></div>
-
+<div th:replace="fragments/fragments :: navbar"></div>
 <!--MAIN TITLE OF PAGE-->
 <main role="main">
     <div class="jumbotron">
         <div class="container">
             <h1 class="display-3" th:text="${park.getFullName()}"></h1>
-            <p>Plan a trip to <span th:text="${park.getFullName()}"></span>!</p>
+            <div class="row">
+                <p class="col">Plan a trip to <span th:text="${park.getFullName()}"></span>!</p>
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-primary">Add to favorites</button>
+                <button type="button" class="btn btn-success">Add to visited</button>
+            </div>
+
         </div>
     </div>
 </main>
@@ -33,7 +44,25 @@
 <!--<img src="https://images.unsplash.com/photo-1473285478869-e754fc9b1cee?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8YmlnJTIwYmVuZCUyMG5hdGlvbmFsJTIwcGFya3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="img-fluid" alt="Responsive image">-->
 <!--</div>-->
 <!--</div>-->
-
+<div class="container">
+    <div class="row">
+        <h3 th:text="${park.getFullName()}"></h3>
+    </div>
+    <div class="row">
+        <p th:text="${park.getDescription()}"></p>
+    </div>
+    <div class="row">
+        <div class="col-8" >
+            <h4>Weather Info</h4>
+            <p th:text="${park.getWeatherInfo()}"></p>
+        </div>
+        <div class="4">
+            <h4>Location</h4>
+            <p class="col" th:text="${park.getLatLong()}"></p>
+            <a class="col" th:href="${park.getDirectionsUrl()}" >Directions to the park!</a>
+        </div>
+    </div>
+</div>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -42,9 +71,16 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="container">
-        <div class="carousel-inner">
-            <div class="carousel-item active" th:each="image :${park.getImages()}">
-                <img class="d-block w-100" th:src="${image.get('url')}" alt="First slide">
+        <div class="carousel-inner" id="carousel-container">
+            <div class="carousel-item active">
+                <img class="d-block w-100" th:src="${firstImage.get('url')}" th:alt="${firstImage.get('alt')}">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 th:text="${firstImage.title}"></h5>
+                    <p th:text="${firstImage.caption}"></p>
+                </div>
+            </div>
+            <div class="carousel-item" th:each="image :${park.getImages()}">
+                <img class="d-block w-100" th:src="${image.get('url')}" th:alt="${image.get('alt')}">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 th:text="${image.title}"></h5>
                     <p th:text="${image.caption}"></p>
@@ -61,91 +97,6 @@
         </a>
     </div>
     </div>
-
-<!--CARDS RENDERING INFORMATION RETRIEVED FROM API BASED ON PARK SELECTION-->
-<div class="container">
-    <div class="row">
-        <div class="card-deck">
-        <div class="card col-md-3 small-product-card" style="width: 80%">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1473285478869-e754fc9b1cee?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8YmlnJTIwYmVuZCUyMG5hdGlvbmFsJTIwcGFya3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
-            <div class="card-body">
-                <div class="card-title">
-                    <h1 th:text="${park.getFullName()}"></h1>
-                </div>
-                <div class="card-text">
-                    <p th:text="${park.getDescription()}"></p>
-<!--                    <p>Park URL</p>-->
-                </div>
-<!--                <a href="#" class="btn btn-primary">Learn More</a>-->
-            </div>
-        </div>
-        <div class="card col-md-3 small-product-card">
-            <!--            <a class="card-img"/></a>-->
-            <div class="card-body">
-                <div class="card-title">
-                    <h1>Weather Summary</h1>
-                </div>
-                <div class="card-text">
-                    <p th:text="${park.getWeatherInfo()}"></p>
-<!--                    <p>Park URL</p>-->
-                </div>
-<!--                <a href="#" class="btn btn-primary">Learn More</a>-->
-            </div>
-        </div>
-        <div class="card col-md-3 small-product-card">
-            <!--            <a class="card-img"/></a>-->
-            <div class="card-body">
-                <div class="card-title">
-                    <h1>Location</h1>
-                </div>
-                <div class="card-text">
-                    <p th:text="${park.getLatLong()}"></p>
-                    <a th:href="${park.getDirectionsUrl()}" >Directions to the park!</a>
-                </div>
-<!--                <a href="#" class="btn btn-primary">Learn More</a>-->
-            </div>
-        </div>
-        <div class="card col-md-3 small-product-card">
-            <!--            <a class="card-img"/></a>-->
-            <div class="card-body">
-                <div class="card-title">
-                    <h1>View Calendar</h1>
-                </div>
-                <div class="card-text">
-                    <p>{Calendar will exist here}</p>
-                </div>
-            </div>
-        </div>
-        <div class="card col-md-3 small-product-card">
-            <!--            <a class="card-img"/></a>-->
-            <div class="card-body">
-                <div class="card-title">
-                    <h1>Operating Hours</h1>
-                </div>
-                <div class="card-text">
-                    <p>{API: "operating hours" -> "description"}</p>
-
-                </div>
-                <a href="#" class="btn btn-primary">NPS Website</a>
-            </div>
-        </div>
-        <div class="card col-md-3 small-product-card">
-            <!--            <a class="card-img"/></a>-->
-            <div class="card-body">
-                <div class="card-title">
-                    <h1>Save this Park:</h1>
-                </div>
-                <div class="card-text">
-                    <button type="button" class="btn btn-primary">Add to favorites</button><br><br>
-                    <button type="button" class="btn btn-success">Add to visited</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<script>
-    document.
-</script>
+<div th:replace="fragments/fragments :: footer"></div>
 </body>
 </html>
