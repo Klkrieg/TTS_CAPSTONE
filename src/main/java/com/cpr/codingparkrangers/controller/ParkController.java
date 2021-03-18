@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Map;
 
 @Controller
@@ -21,11 +23,14 @@ public class ParkController {
     public String getParksInState(@PathVariable("park") String parkCode, Model model){
         ResponseWrapper responseWrapper = responseService.callByPark("parks", parkCode);
         DataField[] data = responseWrapper.getData();
+        Map<String, String>[] images = data[0].getImages();
+        Map<String, String> firstImage= images[0];
         System.out.println(data[0].getDescription());
         for(Map<String, String> image: data[0].getImages()){
             System.out.println(image.get("url"));
         }
         model.addAttribute("park", data[0]);
+        model.addAttribute("firstImage", firstImage);
 
         //model.addAttribute("request", new Request());
         return "park";
