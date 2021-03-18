@@ -25,7 +25,8 @@
         <div class="container">
             <h1 class="display-3" th:text="${stateName}"></h1>
             <p>These are the national parks in <span th:text="${stateName}"></span>.</p>
-
+        </div>
+    </div>
     <div class="container">
         <div th:each="park : ${parksInfo}" class="card mb-3" style="max-width: 100%;">
             <div class="row g-0">
@@ -37,7 +38,7 @@
                         <h3 class="card-title" th:text="${park.fullName}"></h3>
                         <p class="card-text" th:text="${park.description}">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <!--                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-                        <a th:href="@{/park/}${park.getParkCode()}}"><button class="btn btn-primary">Learn more</button></a>
+                        <a th:href="@{/parks/} + ${park.getParkCode()}"><button class="btn btn-primary">Learn more</button></a>
                     </div>
                 </div>
             </div>

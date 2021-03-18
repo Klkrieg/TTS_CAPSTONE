@@ -17,12 +17,16 @@ public class ParkController {
     @Autowired
     ResponseService responseService;
 
-    @GetMapping(value = "/park/{park}")
+    @GetMapping(value = "/parks/{park}")
     public String getParksInState(@PathVariable("park") String parkCode, Model model){
         ResponseWrapper responseWrapper = responseService.callByPark("parks", parkCode);
         DataField[] data = responseWrapper.getData();
         System.out.println(data[0].getDescription());
+        for(Map<String, String> image: data[0].getImages()){
+            System.out.println(image.get("url"));
+        }
         model.addAttribute("park", data[0]);
+
         //model.addAttribute("request", new Request());
         return "park";
     }

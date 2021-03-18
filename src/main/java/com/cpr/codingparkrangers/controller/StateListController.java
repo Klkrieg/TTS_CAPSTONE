@@ -41,12 +41,9 @@ public class StateListController {
 
         // Checking
         System.out.println(request.stateCode);
-        System.out.println(responseWrapper);
+//        System.out.println(responseWrapper);
         for(DataField park : responseWrapper.getData()) {
-            System.out.println(park.getFullName());
-            for(Map<String, String> image : park.getImages()){
-                System.out.println(image.get("credit"));
-            }
+            System.out.println(park.getParkCode());
         }
         return "stateList";
     }
