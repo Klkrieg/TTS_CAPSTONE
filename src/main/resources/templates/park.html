@@ -20,8 +20,8 @@
 <main role="main">
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-3">{parkName}</h1>
-            <p>Plan a trip to {parkName}!</p>
+            <h1 class="display-3" th:text="${park.getFullName()}"></h1>
+            <p>Plan a trip to <span th:text="${park.getFullName()}"></span>!</p>
         </div>
     </div>
 </main>
@@ -41,10 +41,10 @@
             <img class="card-img-top" src="https://images.unsplash.com/photo-1473285478869-e754fc9b1cee?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8YmlnJTIwYmVuZCUyMG5hdGlvbmFsJTIwcGFya3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
             <div class="card-body">
                 <div class="card-title">
-                    <h1>Park Description</h1>
+                    <h1 th:text="${park.getFullName()}"></h1>
                 </div>
                 <div class="card-text">
-                    <p>{API: "description"}</p>
+                    <p th:text="${park.getDescription()}"></p>
 <!--                    <p>Park URL</p>-->
                 </div>
 <!--                <a href="#" class="btn btn-primary">Learn More</a>-->
@@ -57,7 +57,7 @@
                     <h1>Weather Summary</h1>
                 </div>
                 <div class="card-text">
-                    <p>{API: "weatherInfo"}</p>
+                    <p th:text="${park.getWeatherInfo()}"></p>
 <!--                    <p>Park URL</p>-->
                 </div>
 <!--                <a href="#" class="btn btn-primary">Learn More</a>-->
@@ -70,8 +70,8 @@
                     <h1>Location</h1>
                 </div>
                 <div class="card-text">
-                    <p>{API: "latLong"}</p>
-                    <p>{API: "directionsUrl"}</p>
+                    <p th:text="${park.getLatLong()}"></p>
+                    <a th:href="${park.getDirectionsUrl()}" >Directions to the park!</a>
                 </div>
 <!--                <a href="#" class="btn btn-primary">Learn More</a>-->
             </div>
