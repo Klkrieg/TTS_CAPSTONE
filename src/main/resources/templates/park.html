@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../static/custom.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
@@ -20,8 +21,8 @@
 <main role="main">
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-3">{parkName}</h1>
-            <p>Plan a trip to {parkName}!</p>
+            <h1 class="display-3" th:text="${park.getFullName()}"></h1>
+            <p>Plan a trip to <span th:text="${park.getFullName()}"></span>!</p>
         </div>
     </div>
 </main>
@@ -33,6 +34,34 @@
 <!--</div>-->
 <!--</div>-->
 
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="container">
+        <div class="carousel-inner">
+            <div class="carousel-item active" th:each="image :${park.getImages()}">
+                <img class="d-block w-100" th:src="${image.get('url')}" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 th:text="${image.title}"></h5>
+                    <p th:text="${image.caption}"></p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+
 <!--CARDS RENDERING INFORMATION RETRIEVED FROM API BASED ON PARK SELECTION-->
 <div class="container">
     <div class="row">
@@ -41,10 +70,10 @@
             <img class="card-img-top" src="https://images.unsplash.com/photo-1473285478869-e754fc9b1cee?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8YmlnJTIwYmVuZCUyMG5hdGlvbmFsJTIwcGFya3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
             <div class="card-body">
                 <div class="card-title">
-                    <h1>Park Description</h1>
+                    <h1 th:text="${park.getFullName()}"></h1>
                 </div>
                 <div class="card-text">
-                    <p>{API: "description"}</p>
+                    <p th:text="${park.getDescription()}"></p>
 <!--                    <p>Park URL</p>-->
                 </div>
 <!--                <a href="#" class="btn btn-primary">Learn More</a>-->
@@ -57,7 +86,7 @@
                     <h1>Weather Summary</h1>
                 </div>
                 <div class="card-text">
-                    <p>{API: "weatherInfo"}</p>
+                    <p th:text="${park.getWeatherInfo()}"></p>
 <!--                    <p>Park URL</p>-->
                 </div>
 <!--                <a href="#" class="btn btn-primary">Learn More</a>-->
@@ -70,8 +99,8 @@
                     <h1>Location</h1>
                 </div>
                 <div class="card-text">
-                    <p>{API: "latLong"}</p>
-                    <p>{API: "directionsUrl"}</p>
+                    <p th:text="${park.getLatLong()}"></p>
+                    <a th:href="${park.getDirectionsUrl()}" >Directions to the park!</a>
                 </div>
 <!--                <a href="#" class="btn btn-primary">Learn More</a>-->
             </div>
@@ -114,5 +143,9 @@
         </div>
     </div>
 </div>
+</div>
+<script>
+    document.
+</script>
 </body>
 </html>

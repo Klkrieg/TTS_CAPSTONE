@@ -22,8 +22,10 @@ public class DataField {
     private String fullName;
     private String parkCode;
     private String description;
+    private String latLong;
+    private String directionsUrl;
+    private String weatherInfo;
 
-    //test
     private Map<String, String>[] images;
 
 
