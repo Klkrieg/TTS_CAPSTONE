@@ -42,6 +42,11 @@ public class MainController {
         return "saved";
     }
 
+    @GetMapping(value = "/reservation")
+    public String makeReservation() {
+        return "reservation";
+    }
+
 }
 //    @PostMapping(value = "/")
 //    public String getGeneralInfo(Request request, Model model){
