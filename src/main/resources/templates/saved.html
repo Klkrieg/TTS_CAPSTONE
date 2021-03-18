@@ -1,19 +1,20 @@
 <!--SAVED/Favorited PARKS-->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head>
-    <meta charset="UTF-8">
-    <title>Saved Parks</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+<div th:replace="fragments/fragments :: head"></div>
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Saved Parks</title>-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+<!--</head>-->
 <body>
 <!--Navbar-->
-<div th:replace="fragments/navbar"></div>
-
+<div th:replace="fragments/fragments :: navbar"></div>
 <!--Profile Tabs -->
 <ul class="nav nav-tabs">
     <li role="presentation"><a href="/profile">Profile</a></li>
@@ -82,7 +83,7 @@
     </div>
 </div>
 
-
+<div th:replace="fragments/fragments :: footer"></div>
 <!--ANNIE'S OLD CODE NOT USED -->
 <!--<div class="container">-->
 <!--    <div class="row">-->
@@ -121,7 +122,6 @@
 <!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
-
 
 
 </body>
