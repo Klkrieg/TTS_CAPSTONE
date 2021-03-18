@@ -64,8 +64,15 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+	
+<!-- for JSON file link -->
+<!--	    <dependency>-->
+<!--	    	<groupId>com.fasterxml.jackson.core</groupId>-->
+<!--	    	<artifactId>jackson-databind</artifactId>-->
+<!--	    	<version>2.12.2</version>-->
+<!--		</dependency>-->
 
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

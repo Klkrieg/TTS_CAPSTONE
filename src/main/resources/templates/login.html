@@ -1,48 +1,45 @@
 <!--LOGIN PAGE FOR EXISTING USERS-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!--    <link rel="stylesheet" href="static/index.css">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-<!--<div th:replace="fragments/fragments :: navbar" ></div>-->
+<!--Navbar fragment-->
+<div th:replace="fragments/navbar"></div>
+
 
 <main role="main">
-    <div class="jumbotron">
-        <div class="container">
-            <h1 class="display-3">National Parks Search</h1>
-            <p>Where you can customize your national park experience!</p>
-             <form class="form-inline">
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                <option selected>Choose...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-                </select><a class="btn btn-primary" href="/parks" role="button">Try it out &raquo;</a></p>
-        </form>
-        </div>
-
-    </div>
-
     <div class="container">
-        <div class="row">
-            <div class="card col-md-3 small-product-card">
-                <a class="card-img"/></a>
-                <div class="card-body">
-<!--                    <div class="card-title">-->
-<!--                    </div>-->
-                </div>
+        <form method="post" th:action="@{/login}" >
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" th:placeholder="Username" class="form-control"/>
             </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" th:placeholder="Password" id="password" class="form-control" />
+            </div>
+            <div align="center" th:if="${error == true}">
+                <h4 style="color: red">Login unsuccessful.</h4>
+            </div>
+            <button type="submit" value="Login" class="btn btn-success btn-block">Login</button>
+        </form>
+        <div class="pt-3">
+            <a th:href="@{/signup}" class="mt-3"><button type="button" class="btn btn-primary btn-block">Sign Up</button></a>
         </div>
     </div>
 </main>
 
-<!--<footer th:replace="fragments/fragments :: footer"></footer>-->
+
+
+
 </body>
 </html>

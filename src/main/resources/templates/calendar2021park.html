@@ -1,0 +1,200 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en"> -->
+
+<!--<head>-->
+<!--	<meta charset="UTF-8">-->
+<!--	<meta name="viewport" content="width=device-width">-->
+<!--    <title>2021 Calendar Visitors View</title>-->
+
+<!--	-->
+<!--    <script type="text/javascript" src="https://www.google.com/jsapi"> </script>-->
+<!--    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>-->
+<!--    <script type="text/javascript">-->
+<!--    -->
+<!--      google.charts.load("current", {packages:["calendar"]});-->
+<!--      google.charts.setOnLoadCallback(drawChart);-->
+<!--        	-->
+<!--	function drawChart() {-->
+<!--	var dataTable = new google.visualization.DataTable();-->
+<!--       dataTable.addColumn({ type: 'date', id: 'Date' });-->
+<!--       dataTable.addColumn({ type: 'number', id: 'Visitors' });-->
+<!--       dataTable.addRows([-->
+<!--				[ new Date(2021, 0 , 1), 1896],-->
+<!--				[ new Date(2021, 0 , 2), 1896],-->
+<!--				[ new Date(2021, 0 , 3), 2023],-->
+<!--				[ new Date(2021, 0 , 4), 2167],-->
+<!--				[ new Date(2021, 0 , 5), 2276],-->
+<!--				[ new Date(2021, 0 , 6), 2167],-->
+<!--				[ new Date(2021, 0 , 7), 2023],-->
+<!--				[ new Date(2021, 0 , 8), 1896],-->
+<!--				[ new Date(2021, 0 , 9), 1896],-->
+<!--				[ new Date(2021, 0 , 10), 2023],-->
+<!--				[ new Date(2021, 0 , 11), 2167],-->
+<!--				[ new Date(2021, 0 , 12), 2276],-->
+<!--				[ new Date(2021, 0 , 13), 2167],-->
+<!--				[ new Date(2021, 0 , 14), 2023],-->
+<!--				[ new Date(2021, 0 , 15), 1896],-->
+<!--				[ new Date(2021, 0 , 16), 1896],-->
+<!--				[ new Date(2021, 0 , 17), 2023],-->
+<!--				[ new Date(2021, 0 , 18), 2167],-->
+<!--				[ new Date(2021, 0 , 19), 2276],-->
+<!--				[ new Date(2021, 0 , 20), 2167],-->
+<!--				[ new Date(2021, 0 , 21), 2023],-->
+<!--				[ new Date(2021, 0 , 22), 1896],-->
+<!--				[ new Date(2021, 0 , 23), 1896],-->
+<!--				[ new Date(2021, 0 , 24), 2023],-->
+<!--				[ new Date(2021, 0 , 25), 2167],-->
+<!--				[ new Date(2021, 0 , 26), 2276],-->
+<!--				[ new Date(2021, 0 , 27), 2167],-->
+<!--				[ new Date(2021, 0 , 28), 2023],-->
+<!--				[ new Date(2021, 0 , 29), 1896],-->
+<!--				[ new Date(2021, 0 , 30), 1896],-->
+<!--				[ new Date(2021, 0 , 31), 2023],-->
+<!--				[ new Date(2021, 1 , 1), 6321],-->
+<!--				[ new Date(2021, 1 , 2), 1565],-->
+<!--				[ new Date(2021, 1 , 3), 1204],-->
+<!--				[ new Date(2021, 1 , 4), 722],-->
+<!--				[ new Date(2021, 1 , 5), 301],-->
+<!--				[ new Date(2021, 1 , 6), 301],-->
+<!--				[ new Date(2021, 1 , 7), 722],-->
+<!--				[ new Date(2021, 1 , 8), 1204],-->
+<!--				[ new Date(2021, 1 , 9), 1565],-->
+<!--				[ new Date(2021, 1 , 10), 1204],-->
+<!--				[ new Date(2021, 1 , 11), 722],-->
+<!--				[ new Date(2021, 1 , 12), 301],-->
+<!--				[ new Date(2021, 1 , 13), 301],-->
+<!--				[ new Date(2021, 1 , 14), 722],-->
+<!--				[ new Date(2021, 1 , 15), 1204],-->
+<!--				[ new Date(2021, 1 , 16), 1565],-->
+<!--				[ new Date(2021, 1 , 17), 1204],-->
+<!--				[ new Date(2021, 1 , 18), 722],-->
+<!--				[ new Date(2021, 1 , 19), 301],-->
+<!--				[ new Date(2021, 1 , 20), 301],-->
+<!--				[ new Date(2021, 1 , 21), 722],-->
+<!--				[ new Date(2021, 1 , 22), 1204],-->
+<!--				[ new Date(2021, 1 , 23), 1565],-->
+<!--				[ new Date(2021, 1 , 24), 1204],-->
+<!--				[ new Date(2021, 1 , 25), 722],-->
+<!--				[ new Date(2021, 1 , 26), 301],-->
+<!--				[ new Date(2021, 1 , 27), 301],-->
+<!--				[ new Date(2021, 1 , 28), 722],-->
+<!--				[ new Date(2021, 1 , 29), 722],-->
+<!--				[ new Date(2021, 2 , 1), 6321],-->
+<!--				[ new Date(2021, 2 , 2), 1565],-->
+<!--				[ new Date(2021, 2 , 3), 1204],-->
+<!--				[ new Date(2021, 2 , 4), 722],-->
+<!--				[ new Date(2021, 2 , 5), 301],-->
+<!--				[ new Date(2021, 2 , 6), 301],-->
+<!--				[ new Date(2021, 2 , 7), 722],-->
+<!--				[ new Date(2021, 2 , 8), 1204],-->
+<!--				[ new Date(2021, 2 , 9), 1565],-->
+<!--				[ new Date(2021, 2 , 10), 1204],-->
+<!--				[ new Date(2021, 2 , 11), 722],-->
+<!--				[ new Date(2021, 2 , 12), 301],-->
+<!--				[ new Date(2021, 2 , 13), 301],-->
+<!--				[ new Date(2021, 2 , 14), 722],-->
+<!--				[ new Date(2021, 2 , 15), 1204],-->
+<!--				[ new Date(2021, 2 , 16), 1565],-->
+<!--				[ new Date(2021, 2 , 17), 1204],-->
+<!--				[ new Date(2021, 2 , 18), 722],-->
+<!--			]);-->
+
+<!--       var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));-->
+
+<!--       var options = {-->
+<!--         title: "{parkName} - 2019 Calendar Year View",-->
+<!--         height: 200,                  -->
+<!--		 calendar: {-->
+<!--      		underYearSpace: 10, // Bottom padding for the year labels.-->
+<!--      		yearLabel: {-->
+<!--        		fontName: 'Tahoma',-->
+<!--        		fontSize: 40,-->
+<!--        		color: '#1A8763',-->
+<!--        		bold: false,-->
+<!--        		italic: true,-->
+<!--        	}, -->
+<!--        	noDataPattern: {-->
+<!--  				backgroundColor: '#76a7fa',-->
+<!--  				color: '#76a7fa'-->
+<!--			},   -->
+<!--      		monthLabel: {-->
+<!--	        	fontName: 'Tahoma',-->
+<!--	        	fontSize: 20,-->
+<!--	        	color: '#1A8763',-->
+<!--	        	bold: false,-->
+<!--	        	italic: false-->
+<!--		    },-->
+<!--		    monthOutlineColor: {-->
+<!--		    	stroke: '#1A8763',-->
+<!--		    	strokeOpacity: 0.8,-->
+<!--		    	strokeWidth: 2-->
+<!--		    },-->
+<!--		    unusedMonthOutlineColor: {-->
+<!--		    	stroke: '#1A8763',-->
+<!--		    	strokeOpacity: 0.8,-->
+<!--		    	strokeWidth: 1-->
+<!--		    },-->
+<!--		    underMonthSpace: 10,-->
+<!--		    focusedCellColor: {-->
+<!--      			stroke: 'orange',-->
+<!--      			strokeOpacity: 0.8,-->
+<!--      			strokeWidth: 3-->
+<!--      		},-->
+<!--      		colorAxis: {-->
+<!--      			colors: ['green','#00b300'], -->
+<!--      			values: [],-->
+<!--      			minValue: 0,  colors: ['#00b300', '#00b300'],-->
+<!--      			maxValue: 330000000, colors: ['#006700', '#006700']-->
+<!--      		},-->
+<!--			cellColor: {-->
+<!--        		stroke: '#1A8763',-->
+<!--        		strokeOpacity: 0.5,-->
+<!--        		strokeWidth: 1-->
+<!--        	},-->
+<!--        	dayOfWeekLabel: {-->
+<!--        		fontName: 'Tahoma',-->
+<!--        		fontSize: 12,-->
+<!--        		color: '#1A8763',-->
+<!--        		bold: false,-->
+<!--        		italic: true,-->
+<!--      		},-->
+<!--      		dayOfWeekRightSpace: 10,-->
+<!--      		daysOfWeek: 'SMTWTFS',-->
+<!--    	}		 -->
+<!--		};-->
+<!--       chart.draw(dataTable, options);-->
+<!--}-->
+<!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--	<div id="calendar_basic" style="width: 1000px; height: 200px;"></div>-->
+
+<!--		<script>-->
+<!--		function yearsite() {-->
+<!--  		window.location = document.getElementById("year").value; // JQuery:  $("#year").val();-->
+<!--		}	-->
+<!--		</script>-->
+<!--		-->
+<!--		<select onclick="yearsite() "; class="form-control" style="display:inline; width:auto; margin-top:2px;" size="1" id="year">-->
+<!--					<option value="#">Select Year</option>-->
+<!--					<option value="./calendar3Yearpark.html">2021 - Current Year</option>-->
+<!--					<option value="./calendar2020park.html">2020 - Prior Year</option>-->
+<!--					<option value="./calendar2019park.html">2019</option>-->
+<!--					-->
+<!--		</select>-->
+<!--			<button class="btn btn-secondary btn-sm" id="makereservation">Make Your Reservation</button>-->
+<!--			<script type="text/javascript">-->
+<!--    			document.getElementById("makereservation").onclick = function () {-->
+<!--        		location.href = "./calendar3Yearpark.html";-->
+<!--    			};-->
+<!--			</script>-->
+<!--		</br>-->
+<!--		</br>-->
+<!--<image width="300" height="200" src="/Users/patri/Documents/eclipse_bueno/CPR_CodingParkRangers/src/main/resources/static/images/camping.jpg">-->
+<!--<image width="300" height="200" src="/Users/patri/Documents/eclipse_bueno/CPR_CodingParkRangers/src/main/resources/static/images/hiking.jpg">-->
+<!--<image width="300" height="200" src="/Users/patri/Documents/eclipse_bueno/CPR_CodingParkRangers/src/main/resources/static/images/sightseeing.jpg">-->
+
+<!--				-->
+<!--				-->
+<!--</body>-->
+<!--</html>-->

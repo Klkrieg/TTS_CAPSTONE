@@ -19,7 +19,15 @@ public class DataField {
 
     //Parks
     private Map<String, String>[] activities;
+    private String fullName;
+    private String parkCode;
     private String description;
+    private String latLong;
+    private String directionsUrl;
+    private String weatherInfo;
+
+    private Map<String, String>[] images;
+
 
 
 }
